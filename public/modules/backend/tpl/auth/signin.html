@@ -1,0 +1,21 @@
+<div class="container w-xxl w-auto-xs" ng-controller="SigninFormController">
+  <a href class="navbar-brand block m-t">{{app.name}}</a>
+  <div class="m-b-lg">
+    <form name="form" class="form-validation">
+      <div class="list-group list-group-sm">
+        <div class="list-group-item">
+          <input type="email" placeholder="Email" class="form-control no-border" ng-model="user.email" required>
+        </div>
+        <div class="list-group-item">
+           <input type="password" placeholder="Password" class="form-control no-border" ng-model="user.password" required>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-lg btn-primary btn-block" ng-click="login()" ng-disabled='form.$invalid'>登陆</button>
+        <span class="text-danger wrapper text-center" ng-show="message" ng-hide="succcess">{{ message }}</span>
+        <span class="text-success wrapper text-center" ng-show="success">{{ success }}</span>
+      <div class="text-center m-t m-b"><a ui-sref="auth.forgotpwd">忘记密码？</a></div>
+      <div class="line line-dashed"></div>
+    </form>
+  </div>
+  <div class="text-center" ng-include="'modules/backend/tpl/blocks/page_footer.html'"></div>
+</div>

@@ -1,0 +1,95 @@
+/**
+ * 主要公共样式 （包含自定义公共样式，覆盖bootstrap.css的部分样式）
+ * 如果不确定是否是夸模块公用的，写在模块内的公共样式部分
+ */
+
+/*重置响应式样式*/
+.container{width:1190px;}
+a:focus{outline:none;}
+a:hover{text-decoration:none;}
+.nav-tabs>li>a{border-radius:0;}
+.btn{border-radius:0;}
+select{height:34px; line-height:34px;border-radius:0!important;}
+input{border-radius:0!important;}
+.bs-callout {padding: 20px;margin: 20px 0;border: 1px solid #eee;border-left-width: 5px;border-radius: 3px;}
+.bs-callout-info {border-left-color: #5bc0de;}
+.none{display: none;}
+.form-inline .form-group {display: inline-block;margin-bottom: 0;vertical-align: middle;}
+.form-inline .form-control {display: inline-block;width: auto;vertical-align: middle;}
+.modal-dialog {width: 600px;margin: 30px auto;}
+.form-horizontal .control-label {text-align: right;margin-bottom: 0;padding-top: 7px;}
+.close img{width:19px;height:19px;}
+
+/* Margin */
+.m-xxs {margin: 2px 4px;}
+.m-xs {margin: 5px;}
+.m-sm {margin: 10px;}
+.m {margin: 15px;}
+.m-md {margin: 20px;}
+.m-lg {margin: 30px;}
+.m-xl {margin: 50px;}
+.m-n {margin: 0 !important;}
+.m-l-none {
+  margin-left: 0;
+}
+.m-l-xs {
+  margin-left: 5px;
+}
+.m-l-sm {
+  margin-left: 10px;
+}
+.m-l {
+  margin-left: 15px;
+}
+.m-l-md {
+  margin-left: 20px;
+}
+.m-l-lg {
+  margin-left: 30px;
+}
+.m-l-xl {
+  margin-left: 40px;
+}
+.m-l-xxl {
+  margin-left: 50px;
+}
+.m-l-n-xxs {
+  margin-left: -1px;
+}
+.m-l-n-xs {
+  margin-left: -5px;
+}
+.m-l-n-sm {
+  margin-left: -10px;
+}
+.m-l-n {
+  margin-left: -15px;
+}
+.m-l-n-md {
+  margin-left: -20px;
+}
+.m-l-n-lg {
+  margin-left: -30px;
+}
+.m-l-n-xl {
+  margin-left: -40px;
+}
+.m-l-n-xxl {
+  margin-left: -50px;
+}
+/* 文字颜色 */
+.text-danger {
+  color: #f05050;
+}
+.text-danger-lt {
+  color: #f26767;
+}
+.text-danger-lter {
+  color: #f47f7f;
+}
+.text-danger-dk {
+  color: #ee3939;
+}
+.text-danger-dker {
+  color: #ec2121;
+}

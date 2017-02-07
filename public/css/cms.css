@@ -1,0 +1,27 @@
+@charset "utf-8";
+/* CSS Document */
+*{padding:0px;margin:0px;}
+html{overflow-x:hidden;overflow-y:auto;}
+img{border:none;}
+a{text-decoration:none;color:#666;}
+.fl{float:left;	 display:inline;}
+.fr{float:right; display:inline;	}
+.clear{clear:both;}
+body{width:100%;overflow-x:hidden;font-size:12px;color:#242424;font-family: "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", "Hiragino Sans GB W3", "WenQuanYi Micro Hei", "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;padding:0px;margin:0 auto;}
+#header{height:50px;padding:0 120px;line-height: 50px;border-bottom:1px solid #ddd;}
+#header .logo{width: 300px;margin-top: 10px;}
+#header .nav{width:430px;}
+#header .nav ul li,#header .nav ul li a{float:left;font-size:12px;display:block;color:#aaa;font-family:'宋体';text-align:center;width:70px;}
+#header .nav ul li.on a{color: #f4645f;}#header .nav ul li a:hover{color:#f4645f;}
+#header1{border-top: 5px solid #f4726d;padding: 20px 0;}
+#header1 a{color: #9EABB3;margin:30px 0 0 70px;display: block;}
+#main{width:730px;margin:0 auto;padding:0;}
+#main .con{border-bottom:1px solid #ddd;padding: 50px 0 ;}
+#main .con h3{font-size: 32px;color: #2E2E2E;line-height: 1.15em;margin: 0 0 0.4em 0;}
+#main .con h2{font-size: 52px;color: #333;}
+#main .con h3 a{color: #4A4A4A;}
+#main .con .download{margin: 0;font-size: 1.3em;line-height: 1.7em;color: #333;}
+#main .con .mark{display: block;margin: 1rem 0 0 0;font-size: 0.9rem;line-height: 2.2rem;color: #9EABB3;}
+#main .con .mark img{width: 24px;height: 24px;margin-right: 9px;border-radius: 100%;vertical-align: -5px;}
+#main .con .mark a{color: #9EABB3;}#main .con .mark a:hover{text-decoration: underline;}
+#footer{ background: #252525;height: 45px;line-height: 45px;text-align: center;color: #555;font-weight: 600;}

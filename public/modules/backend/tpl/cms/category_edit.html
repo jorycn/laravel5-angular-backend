@@ -1,0 +1,20 @@
+<div ng-controller="CmsCategoryEditCtrl">
+    <!-- header -->
+    <div class="bg-light lter b-b wrapper-xs ng-scope">
+        <ul class="breadcrumb">
+          <li><a ui-sref="app.dashboard"><i class="fa fa-home"></i> 首页</a></li>
+          <li><a ui-sref="app.cms.category.list">栏目列表</a></li>
+          <li class="active">修改栏目</li>
+        </ul>
+    </div>
+    <!-- / header -->
+    <div class="wrapper">
+        <div class="panel panel-default">
+            <div class="panel-heading font-bold">修改栏目</div>
+            <dynamic-form name="form" class="form-horizontal m-t-lg form-validation" template="stdFormTemplate" ng-model="stdFormData">
+
+            </dynamic-form>
+        </div>
+    </div>
+
+</div>

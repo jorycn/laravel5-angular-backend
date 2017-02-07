@@ -1,0 +1,10 @@
+/bootstrap/compiled.php
+.c9/*
+.idea/*
+.env.*.php
+.env
+.DS_Store
+vendor/*
+node_modules/*
+Thumbs.db
+.vscode

@@ -1,0 +1,56 @@
+<div class="bg-light lter b-b wrapper-md">
+    <h1 class="m-n font-thin h3">文章列表</h1>
+</div>
+<div class="wrapper-md" ng-controller="CmsPostListCtrl">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a class="btn m-b-xs w-xs btn-success" ui-sref="app.cms.post.add">添加文章</a>
+        </div>
+        <div class="panel-body b-b b-light">
+            Search: <input id="filter" type="text" class="form-control input-sm w-sm inline m-r"/>
+        </div>
+        <div>
+            <table class="table m-b-none" ui-jq="footable" data-filter="#filter" data-page-size="5">
+                <thead>
+                <tr>
+                    <th data-toggle="true">id</th>
+                    <th>标题</th>
+                    <th>作者</th>
+                    <th>更新时间</th>
+                    <th>创建时间</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-hide='posts.length>-1'>
+                    <td colspan=8 align=center><i class="fa fa-spinner fa-pulse"></i>&nbsp;正在加载...</td>
+                </tr>
+                <tr ng-repeat="post in posts">
+                    <td>{{ post.id }}</td>
+                    <td>{{ post.title }}</td>
+                    <td>{{ post.author }}</td>
+                    <td>{{ post.updated_at }}</td>
+                    <td>{{ post.created_at }}</td>
+                    <td>
+                        <div class="btn-group dropdown">
+                            <button class="btn btn-success btn-xs dropdown-toggle {{ post.disabled }}" aria-haspopup="true" aria-expanded="false">Action <span class="caret"></span></button>
+                            <ul class="dropdown-menu">
+                                <li><a ui-sref="app.cms.post.edit({id:post.id})">修改</a></li>
+                                <li class="divider"></li>
+                                <li><a href ng-click="delete({id:post.id})">删除</a></li>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+                <tfoot class="hide-if-no-paging">
+                <tr>
+                    <td colspan="5" class="text-center">
+                        <ul class="pagination"></ul>
+                    </td>
+                </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+</div>

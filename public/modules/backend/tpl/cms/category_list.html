@@ -1,0 +1,79 @@
+<div class="bg-light lter b-b wrapper-md">
+    <h1 class="m-n font-thin h3">栏目列表</h1>
+</div>
+<div class="wrapper-md" ng-controller="CmsCategoryListCtrl">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a class="btn m-b-xs w-xs btn-success" ui-sref="app.cms.category.add">添加栏目</a>
+        </div>
+        <div class="panel-body b-b b-light">
+            Search: <input id="filter" type="text" class="form-control input-sm w-sm inline m-r"/>
+        </div>
+        <div>
+            <table class="table m-b-none" ui-jq="footable" data-filter="#filter" data-page-size="5">
+                <thead>
+                <tr>
+                    <th data-sort-ignore="true"></th>
+                    <th data-toggle="true">id</th>
+                    <th>pid</th>
+                    <th>标题</th>
+                    <th>别名</th>
+                    <th>更新时间</th>
+                    <th>创建时间</th>
+                    <th data-sort-ignore="true">操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-hide='categories.length>-1'>
+                    <td colspan=8 align=center><i class="fa fa-spinner fa-pulse"></i>&nbsp;正在加载...</td>
+                </tr>
+                <tr ng-repeat="category in categories" ng-show='categories'>
+                    <td><input type="checkbox" checklist-model="cate.idss" checklist-value="category.id"></td>
+                    <td>{{ category.id }}</td>
+                    <td>{{ category.pid }}</td>
+                    <td>{{ category.name }}</td>
+                    <td>{{ category.slug }}</td>
+                    <td>{{ category.updated_at }}</td>
+                    <td>{{ category.created_at }}</td>
+                    <td>
+                        <div class="btn-group dropdown">
+                            <button class="btn btn-success btn-xs dropdown-toggle {{ category.disabled }}" aria-haspopup="true" aria-expanded="false">Action <span class="caret"></span></button>
+                            <ul class="dropdown-menu">
+                                <li><a ui-sref="app.cms.category.edit({id:category.id})">修改</a></li>
+                                <li class="divider"></li>
+                                <li><a href ng-click="delete({id:category.id})">删除</a></li>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+                <tfoot ng-show='categories'>
+                <tr>
+                    <td colspan="8">
+                        <div class="row">
+                            <div class="col-sm-8 hidden-xs">
+                                <button class="btn btn-sm btn-default" ng-click="checkAll()">全选</button>
+                                <button class="btn btn-sm btn-default" ng-click="uncheckAll()">全不选</button>
+                                <select name="actions" ng-model="cate.actions" class="input-sm form-control w-sm inline v-middle">
+                                    <option value="">操作</option>
+                                    <option value="1">删除</option>
+                                    <option value="2">推荐</option>
+                                    <option value="3">不推荐</option>
+                                    <option value="4">显示</option>
+                                    <option value="5">不显示</option>
+                                </select>
+                                <button class="btn btn-default btn-sm" type="submit" ng-click="onApply()">应用</button>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="hide-if-no-paging">
+                    <td colspan="5" class="text-center">
+                        <ul class="pagination"></ul>
+                    </td>
+                </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+</div>

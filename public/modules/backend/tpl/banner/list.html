@@ -1,0 +1,57 @@
+<div class="bg-light lter b-b wrapper-md">
+    <div class="bg-light lter b-b wrapper-xs ng-scope">
+        <ul class="breadcrumb">
+            <li><a ui-sref="app.dashboard"><i class="fa fa-home"></i> 首页</a></li>
+            <li><a ui-sref="app.slide.list">广告管理</a></li>
+            <li class="active">新增banner</li>
+        </ul>
+    </div>
+</div>
+<div class="wrapper-md" ng-controller="BannerListCtrl">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a class="btn m-b-xs w-xs btn-success" ui-sref="app.banner.add({'slide_id':slide_id})">添加Banner</a>
+        </div>
+        <div class="panel-body b-b b-light">
+            Search: <input id="filter" type="text" class="form-control input-sm w-sm inline m-r"/>
+        </div>
+        <div>
+            <table class="table m-b-none" ui-jq="footable" data-filter="#filter" data-page-navigation=".page">
+                <thead>
+                <tr>
+                    <th data-toggle="true">id</th>
+                    <th>缩略图</th>
+                    <th>修改时间</th>
+                    <th>创建时间</th>
+                    <th data-sort-ignore="true">操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="item in items">
+                    <td>{{ item.id }}</td>
+                    <td><img src="{{ item.banner.path }}" width="150" height="75"/> </td>
+                    <td>{{ item.updated_at }}</td>
+                    <td>{{ item.created_at }}</td>
+                    <td><a href ng-click="delete({id:item.id})"><i class="fa fa-trash-o text-danger"></i></a></td>
+                </tr>
+                </tbody>
+                <tfoot>
+                <tr>
+                    <td colspan="5" class="text-center">
+                        <ul class="pagination" ng-show="totalPage>1" >
+                            <li ng-class="{true:'active'}[currentPage>1]"><a href="javascript:void(0)" ng-click="currentPage=1;load()">首页</a></li>
+                            <li ng-class="{true:'disabled'}[currentPage==1]"><a href="javascript:void(0);" ng-click="prev()">上一页</a></li>
+                            <li ng-repeat="page in pages" ng-class="{true:'active'}[currentPage == page]">
+                                <a href="javascript:void(0);" ng-click="loadPage(page)">{{ page }}</a>
+                            </li>
+                            <li ng-class="{true:'disabled'}[currentPage==totalPage]"><a href="javascript:void(0);" ng-click="next()">下一页</a></li>
+                            <li ng-class="{true:'active'}[currentPage==totalPage]"><a href="javascript:void(0)" ng-click="currentPage=totalPage;load()">末页</a></li>
+                            <li><a href="javascript:;">共{{ total }}条数据</a></li>
+                        </ul>
+                    </td>
+                </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+</div>

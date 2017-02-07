@@ -1,0 +1,51 @@
+<div class="modal-header">
+    <h3 class="modal-title">所有用户列表</h3>
+</div>
+<div class="modal-body">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            Search: <input id="filter" type="text" class="form-control input-sm w-sm inline m-r"/>
+        </div>
+        <div>
+            <table class="table m-b-none" ui-jq="footable" data-filter="#filter" data-page-navigation=".page">
+                <thead>
+                <tr>
+                    <th data-sort-ignore="true"><!--<input type="checkbox"  ng-click="chkAll()"/>--></th>
+                    <th>id</th>
+                    <th>email</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-hide='items.length>-1'>
+                    <td colspan=3 align=center><i class="fa fa-spinner fa-pulse"></i>&nbsp;正在加载...</td>
+                </tr>
+                <tr ng-repeat="item in items">
+                    <td><input type="checkbox" ng-model="item.checked"/></td>
+                    <td>{{ item.id }}</td>
+                    <td>{{ item.email }}</td>
+                </tr>
+                </tbody>
+                <tfoot>
+                <tr>
+                    <td colspan="3" class="text-center">
+                        <ul class="pagination" ng-show="totalPage>1" >
+                            <li ng-class="{true:'active'}[currentPage>1]"><a href="javascript:void(0)" ng-click="currentPage=1;load()">首页</a></li>
+                            <li ng-class="{true:'disabled'}[currentPage==1]"><a href="javascript:void(0);" ng-click="prev()">上一页</a></li>
+                            <li ng-repeat="page in pages" ng-class="{true:'active'}[currentPage == page]">
+                                <a href="javascript:void(0);" ng-click="loadPage(page)">{{ page }}</a>
+                            </li>
+                            <li ng-class="{true:'disabled'}[currentPage==totalPage]"><a href="javascript:void(0);" ng-click="next()">下一页</a></li>
+                            <li ng-class="{true:'active'}[currentPage==totalPage]"><a href="javascript:void(0)" ng-click="currentPage=totalPage;load()">末页</a></li>
+                            <li><a href="javascript:;">共{{ total }}条数据</a></li>
+                        </ul>
+                    </td>
+                </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-default" ng-click="cancel()">Cancel</button>
+    <button class="btn btn-primary" ng-click="ok()">OK</button>
+</div>

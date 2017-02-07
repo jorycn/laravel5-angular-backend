@@ -1,0 +1,21 @@
+<div ng-controller="UserAddCtrl">
+    <!-- header -->
+    <div class="bg-light lter b-b wrapper-xs ng-scope">
+        <ul class="breadcrumb">
+          <li><a ui-sref="app.dashboard"><i class="fa fa-home"></i> 首页</a></li>
+          <li><a ui-sref="app.user.list">用户列表</a></li>
+          <li class="active">添加用户</li>
+        </ul>
+    </div>
+    <!-- / header -->
+    <div class="wrapper">
+        <div class="panel panel-default">
+            <div class="panel-heading font-bold">添加用户</div>
+            <div class="panel-body">
+                <dynamic-form name="form" class="form-horizontal m-t-lg form-validation" template="stdFormTemplate" ng-model="stdFormData">
+
+                </dynamic-form>
+            </div>
+        </div>
+    </div>
+</div>
